@@ -1,0 +1,9 @@
+{
+	"name": "GbollyADFInstance",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "2bd27d56-92c8-459a-9ddd-50838f11caa0",
+		"tenantId": "e4bb61b4-0ea9-46a8-9414-749e803e667b"
+	}
+}
