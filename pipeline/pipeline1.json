@@ -14,7 +14,9 @@
 				"typeProperties": {
 					"url": "https://ethicalsol.uc.r.appspot.com/ESM_Get_Country",
 					"method": "POST",
-					"body": "{AAA}",
+					"body": {
+						"publicHolidayDate": "2022-12-25"
+					},
 					"timeout": "00:10:00"
 				}
 			},
