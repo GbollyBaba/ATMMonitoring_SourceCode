@@ -5,6 +5,8 @@
 			{
 				"name": "WebHook1",
 				"type": "WebHook",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Skipped",
 				"dependsOn": [],
 				"policy": {
 					"secureOutput": false,
@@ -38,7 +40,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"variableName": "countryList",
-					"value": "@activity('WebHook1').output.COUNTRIES"
+					"value": {
+						"value": "@activity('WebHook1').output.COUNTRIES",
+						"type": "Expression"
+					}
 				}
 			}
 		],
