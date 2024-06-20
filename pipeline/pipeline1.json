@@ -6,7 +6,7 @@
 				"name": "WebHook1",
 				"type": "WebHook",
 				"state": "Inactive",
-				"onInactiveMarkAs": "Skipped",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"secureOutput": false,
@@ -19,7 +19,8 @@
 					"body": {
 						"publicHolidayDate": "2022-12-25"
 					},
-					"timeout": "00:10:00"
+					"timeout": "00:10:00",
+					"reportStatusOnCallBack": false
 				}
 			},
 			{
@@ -42,6 +43,25 @@
 					"variableName": "countryList",
 					"value": {
 						"value": "@activity('WebHook1').output.COUNTRIES",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "Set varCountryList",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@variables('countryList')",
 						"type": "Expression"
 					}
 				}
