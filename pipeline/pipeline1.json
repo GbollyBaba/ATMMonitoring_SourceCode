@@ -1,0 +1,50 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "WebHook1",
+				"type": "WebHook",
+				"dependsOn": [],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://ethicalsol.uc.r.appspot.com/ESM_Get_Country",
+					"method": "POST",
+					"body": "{AAA}",
+					"timeout": "00:10:00"
+				}
+			},
+			{
+				"name": "Set varCountryList",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "WebHook1",
+						"dependencyConditions": [
+							"Skipped"
+						]
+					}
+				],
+				"policy": {
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "countryList",
+					"value": "@activity('WebHook1').output.COUNTRIES"
+				}
+			}
+		],
+		"variables": {
+			"countryList": {
+				"type": "String"
+			}
+		},
+		"annotations": []
+	}
+}
