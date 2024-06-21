@@ -1,0 +1,21 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "GoogleCloudStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "GoogleCloudStorageLocation",
+				"bucketName": "esmbucket",
+				"folderPath": "ADF",
+				"fileName": "Flights 1m (1).parquet"
+			},
+			"compressionCodec": "gzip"
+		},
+		"schema": []
+	}
+}
