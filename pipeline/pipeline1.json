@@ -77,7 +77,16 @@
 								"secureOutput": false,
 								"secureInput": false
 							},
-							"userProperties": [],
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "ADF/Flights 1m (1).parquet"
+								},
+								{
+									"name": "Destination",
+									"value": "ADF/Flights 1m (1)_Destination.parquet"
+								}
+							],
 							"typeProperties": {
 								"source": {
 									"type": "ParquetSource",
